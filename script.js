@@ -35,7 +35,6 @@ async function intializeGapiClient() {
 
 function display_index(template_index){
     const post = document.querySelector('.page-index')
-	console.log(post)
 	template_index.shift()
     let post_content = ""
     for ( let item of template_index ) { // get each row
@@ -45,18 +44,17 @@ function display_index(template_index){
         const month_string = item[2]
 		const topic = item[3]
 		console.log(topic)
-		console.log(post_content)
         const permalink = item[4]
 		const display = item[5]
         
 		if (display == 'yes'){
 			post_content +=
-			`
+		`
 		<!-- index -->
 		<section class="container index">
 			
 			<div class="row-${month_id} flex column">
-				<a href="#">
+				<a href="/monthly/year-2024.html#${permalink}" class="permalink-link" target="_blank" data-anchor="${permalink}">
 					<div class="row-a flex row light-gray">
 						<div class="column-a row ${month_color}">#${month_id}</div>
 						<div class="column-b row">${month_string}</div>
@@ -70,4 +68,31 @@ function display_index(template_index){
 		}
 	}
     post.innerHTML = post_content // add this html to section .page-index
+	
 }
+
+function openAnchorInNewWindow() {
+    const isPermalink = this.classList.contains("permalink-link") || this.dataset.isPermalink === "true";
+    if (isPermalink) {
+        const anchor = this.dataset.anchor;
+		console.log(anchor)
+        const section = document.querySelector(`"[data-anchor='${anchor}']"`);
+		console.log(section)
+        section.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+    } else {
+        // Handle regular link logic (e.g., navigate to anchor within the page)
+		console.error("Element not found:", anchor);
+    }
+}
+
+const links = document.querySelectorAll("a.permalink-link");
+
+links.forEach((link) => {
+  link.addEventListener("click", (event) => {
+    // Get the parent anchor element
+    const parentAnchor = event.target.closest("a.permalink-link");
+
+    // Open a new window with the parent anchor's href
+    window.open(parentAnchor.href, "_blank");
+  });
+});
