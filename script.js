@@ -56,7 +56,7 @@ function display_index(template_index){
 		<section class="container index">
 			
 			<div class="row-${month_id} flex column">
-				<a href="/data/${sheet}.html">
+				<a href="https://gabrielacaesar.github.io/google-trends-longform/data/${sheet}.html">
 					<div class="row-a flex row light-gray">
 						<div class="column-a row ${month_color}">#${month_id}</div>
 						<div class="column-b row">${month_string}</div>
