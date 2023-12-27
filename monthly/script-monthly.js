@@ -77,7 +77,7 @@ function display_data(template_data){
 
     <!- vh1-section -->
         <section class="container vh-section flex column month-${month_id}">
-            <a href="#${permalink}"><h1 class="flex intro title-template">${title}</h1></a>
+            <a href="#${permalink}" class="permalink-link" target="_blank" data-anchor="${permalink}"><h1 class="flex intro title-template">${title}</h1></a>
             <h2 class="flex intro subtitle-template">with Google Trends</h2>
             <h3 class="flex intro month-template">${date}</h3>
             <h4 class="flex intro author-template">${author}<br>${position}</h4>
