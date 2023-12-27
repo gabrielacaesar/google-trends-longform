@@ -66,13 +66,6 @@ function display_data(template_data){
         post_content +=
         `
     <!-- bar project's theme -->
-    <section class="container flex bar-theme" id="bar-theme">
-        <div class="dark-gray theme"></div>
-        <div class="dark-gray flex theme title-header"><p class="flex">United States</p></div>
-        <div class="dark-gray flex theme month-header"><p class="flex">2024</p></div>
-        <div class="dark-gray theme"></div>
-    </section>
-
     <section class="flex" id="bar-logo">
         <a target="_blank" href="https://trends.google.com/home">
             <img class="trends-logo" src="img/google_trends_logo.png" alt="Google Trends logo">
@@ -83,7 +76,7 @@ function display_data(template_data){
     <section class="center-text">
 
     <!- vh1-section -->
-        <section class="container vh-section flex column">
+        <section class="container vh-section flex column month-${month_id}">
             <a href="#${permalink}"><h1 class="flex intro title-template">${title}</h1></a>
             <h2 class="flex intro subtitle-template">with Google Trends</h2>
             <h3 class="flex intro month-template">${date}</h3>

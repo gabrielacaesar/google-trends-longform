@@ -41,7 +41,7 @@ function display_index(template_index){
     for ( let item of template_index ) { // get each row
         
         const month_color = item[0]
-        const month_integer = item[1]
+        const month_id = item[1]
         const month_string = item[2]
 		const topic = item[3]
 		console.log(topic)
@@ -55,10 +55,10 @@ function display_index(template_index){
 		<!-- index -->
 		<section class="container index">
 			
-			<div class="row-${month_integer} flex column">
-				<a href="year-2024.html#${permalink}">
+			<div class="row-${month_id} flex column">
+				<a href="#">
 					<div class="row-a flex row light-gray">
-						<div class="column-a row ${month_color}">#${month_integer}</div>
+						<div class="column-a row ${month_color}">#${month_id}</div>
 						<div class="column-b row">${month_string}</div>
 						<div class="column-c row">${topic}</div>
 					</div>
