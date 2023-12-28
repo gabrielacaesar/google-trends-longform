@@ -14,7 +14,7 @@ const DISCOVERY_DOCS = ['https://sheets.googleapis.com/$discovery/rest?version=v
 // template structure
 let content = {
     spreadsheetId : sheets_id, // get ur sheets id added above
-    range : '01-2024' // get the name of ur worksheet added above
+    range : '08-2024' // get the name of ur worksheet added above
 }
 
 // quickstart - https://developers.google.com/sheets/api/quickstart/js

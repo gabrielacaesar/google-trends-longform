@@ -46,12 +46,9 @@ header {
 }
 
 .vh-section {
-	height: 100vh;
-}
-
-.vh-section {
 	padding: 20% 0;
 	justify-content: center;
+	height: 100vh;
 }
 
 /* header menu */
@@ -60,7 +57,7 @@ header {
 	position: fixed;
 	justify-content: center;
 	margin-top: 130px;
-	margin-left: 150px;
+	margin-left: -100px;
 	width: 70px;
 	height: 70px;
 	border: #202124 1.7px solid;
@@ -215,6 +212,10 @@ h3, h4 {
 	text-align: center;
 }
 
+.footnote {
+	font-size: 10px;
+}
+
 /* content vh3-section  */ 
 
 .number-box {
@@ -268,7 +269,7 @@ MOBILE
     }
 
     .trends-logo {
-    	width: 70px;
+    	width: 60px;
     }
 
     .center-text {
@@ -277,23 +278,44 @@ MOBILE
 
     h1 {
     	font-size: 50px;
-    	margin-top: 40% !important;
+    	margin-top: 0 !important;
+		height: 10%;
     }
 
     h2 {
     	font-size: 35px;
+		height: 30%;
     }
 
     h3, h4 {
     	font-size: 25px;
+		height: 15%;
     }
 
     .content-box {
     	font-size: 25px;
     }
 
+	.vh-section {
+		padding: 0 !important;
+	}
+
+	header {
+		display: flex;
+		justify-content: center;
+		width: 100%;
+	}
+
+	header > a {
+		margin-top: 90px;
+	}
+
 	.menu {
-		display: none;
+		position: relative;
+		margin-top: 0px;
+		margin-left: 0px;
+		width: 50px;
+		height: 50px;
 	}
 
 }

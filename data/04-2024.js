@@ -50,18 +50,29 @@ function display_data(template_data){
         const position = item[6]
         const vh2_text = item[7]
         const vh2_flourish = item[8]
-        const vh3_text = item[9]
-        const vh3_flourish = item[10]
-        const vh4_data_point_t1 = item[11]
-        const vh4_data_point_t2 = item[12]
-        const vh4_text = item[13]
-        const vh5_text = item[14]
-        const vh5_list = item[15]
-        const vh6_text = item[16]
-        const vh6_list = item[17]
-        const vh7_text = item[18]
-        const vh7_list = item[19]
-        const footer = item[20]
+        const vh2_note = item[9]
+        const vh3_text = item[10]
+        const vh3_flourish = item[11]
+        const vh3_note = item[12]
+        const vh4_data_point_t1 = item[13]
+        const vh4_data_point_t2 = item[14]
+        const vh4_text = item[15]
+        const vh5_text = item[16]
+        const vh5_flourish = item[17]
+        const vh5_note = item[18]
+        const vh6_text = item[19]
+        const vh6_list = item[20]
+        const vh7_text = item[21]
+        const vh7_flourish = item[22]
+        const vh7_note = item[23]
+        const vh8_text = item[24]
+        const vh8_list = item[25]
+        const vh9_text = item[26]
+        const vh9_flourish = item[27]
+        const vh9_note = item[28]
+        const vh10_text = item[29]
+        const vh10_list = item[30]
+        const footer = item[31]
 
         post_content +=
         `
@@ -75,9 +86,19 @@ function display_data(template_data){
     
     <section class="center-text">
 
+    <header>
+    <a href="../index.html">
+        <div class="menu flex column">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
+    </a>
+    </header>
+
     <!- vh1-section -->
         <section class="container vh-section flex column month-${month_id}">
-            <a href="#${permalink}" class="permalink-link" target="_blank" data-anchor="${permalink}"><h1 class="flex intro title-template">${title}</h1></a>
+            <h1 class="flex intro title-template">${title}</h1>
             <h2 class="flex intro subtitle-template">with Google Trends</h2>
             <h3 class="flex intro month-template">${date}</h3>
             <h4 class="flex intro author-template">${author}<br>${position}</h4>
@@ -97,6 +118,9 @@ function display_data(template_data){
             post_content +=
         `
         <iframe src='https://flo.uri.sh/visualisation/${vh2_flourish}/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe>
+            <div class="content-box">
+                <p class="footnote">${vh2_note}</p>
+            </div>
         </section>
         `
         }
@@ -114,6 +138,9 @@ function display_data(template_data){
             post_content +=
         `
         <iframe src='https://flo.uri.sh/visualisation/${vh3_flourish}/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe>
+            <div class="content-box">
+                <p class="footnote">${vh3_note}</p>
+            </div>
         </section>
         `
         }
@@ -140,20 +167,19 @@ function display_data(template_data){
         if (vh5_text != '-'){
             post_content +=
         `
-        <!-- vh5 section -->
+        <!-- vh5-section -->
         <section class="container vh-section flex column">
             <div class="content-box">
                 <p>${vh5_text}</p>
             </div>
         `
         }
-        if (vh5_list != '-'){
-                post_content +=
+        if (vh5_flourish != '-'){
+            post_content +=
         `
-            <div class="question-box">
-                <ul>
-                   ${vh5_list}
-                </ul>
+        <iframe src='https://flo.uri.sh/visualisation/${vh5_flourish}/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe>
+            <div class="content-box">
+                <p class="footnote">${vh5_note}</p>
             </div>
         </section>
         `
@@ -164,7 +190,7 @@ function display_data(template_data){
         <!-- vh6 section -->
         <section class="container vh-section flex column">
             <div class="content-box">
-            <p>${vh6_text}</p>
+                <p>${vh6_text}</p>
             </div>
         `
         }
@@ -173,7 +199,7 @@ function display_data(template_data){
         `
             <div class="question-box">
                 <ul>
-                    ${vh6_list}
+                   ${vh6_list}
                 </ul>
             </div>
         </section>
@@ -182,19 +208,80 @@ function display_data(template_data){
         if (vh7_text != '-'){
             post_content +=
         `
-        <!-- vh7 section -->
+        <!-- vh7-section -->
         <section class="container vh-section flex column">
             <div class="content-box">
                 <p>${vh7_text}</p>
             </div>
         `
         }
-        if (vh7_list != '-'){
+        if (vh7_flourish != '-'){
+            post_content +=
+        `
+        <iframe src='https://flo.uri.sh/visualisation/${vh7_flourish}/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe>
+            <div class="content-box">
+                <p class="footnote">${vh7_note}</p>
+            </div>
+        </section>
+        `
+        }
+        if (vh8_text != '-'){
+            post_content +=
+        `
+        <!-- vh8 section -->
+        <section class="container vh-section flex column">
+            <div class="content-box">
+            <p>${vh8_text}</p>
+            </div>
+        `
+        }
+        if (vh8_list != '-'){
                 post_content +=
         `
             <div class="question-box">
                 <ul>
-                    ${vh7_list}
+                    ${vh8_list}
+                </ul>
+            </div>
+        </section>
+        `
+        }
+        if (vh9_text != '-'){
+            post_content +=
+        `
+        <!-- vh9-section -->
+        <section class="container vh-section flex column">
+            <div class="content-box">
+                <p>${vh9_text}</p>
+            </div>
+        `
+        }
+        if (vh9_flourish != '-'){
+            post_content +=
+        `
+        <iframe src='https://flo.uri.sh/visualisation/${vh9_flourish}/embed' title='Interactive or visual content' class='flourish-embed-iframe' frameborder='0' scrolling='no' style='width:100%;height:600px;' sandbox='allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation'></iframe>
+            <div class="content-box">
+                <p class="footnote">${vh9_note}</p>
+            </div>
+        </section>
+        `
+        }
+        if (vh10_text != '-'){
+            post_content +=
+        `
+        <!-- vh10 section -->
+        <section class="container vh-section flex column">
+            <div class="content-box">
+                <p>${vh10_text}</p>
+            </div>
+        `
+        }
+        if (vh10_list != '-'){
+                post_content +=
+        `
+            <div class="question-box">
+                <ul>
+                    ${vh10_list}
                 </ul>
             </div>
         </section>
